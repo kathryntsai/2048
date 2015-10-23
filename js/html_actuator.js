@@ -62,12 +62,78 @@ HTMLActuator.prototype.addTile = function (tile) {
   this.applyClasses(wrapper, classes);
 
   inner.classList.add("tile-inner");
-  inner.textContent = tile.value;
+
+  /*if (tile.value == 2){
+    inner.textContent = "6";
+  } else if (tile.value == 4){
+    inner.textContent = ".";
+  } else if (tile.value == 8){
+    inner.textContent = "0";
+  } else if (tile.value == 16){
+    inner.textContent = "2";
+  } else if (tile.value == 32){
+    inner.textContent = "x";
+  } else if (tile.value == 64){
+    inner.textContent = "10";
+  } else if (tile.value == 128){
+    inner.textContent = "^";
+  } else if (tile.value == 256){
+    inner.textContent = "23";
+  }*/
+
+  /*if (tile.value == 2){
+    inner.textContent = "6";
+  } else if (tile.value == 4){
+    inner.textContent = "6.";
+  } else if (tile.value == 8){
+    inner.textContent = "6.0";
+  } else if (tile.value == 16){
+    inner.textContent = "6.02";
+  } else if (tile.value == 32){
+    inner.textContent = "6.022";
+  } else if (tile.value == 64){
+    inner.textContent = "6.0221";
+  } else if (tile.value == 128){
+    inner.textContent = "6.02214";
+  } else if (tile.value == 256){
+    inner.textContent = "6.022142";
+  }else if (tile.value == 512){
+    inner.textContent = "6.0221421";
+  }else if (tile.value == 1024){
+    inner.textContent = "6.02214213"; //29
+  }else if (tile.value == 2048){
+    inner.textContent = "6.02214213E23";
+  }*/
+
+  if (tile.value == 2){
+    inner.textContent = "6";
+  } else if (tile.value == 4){
+    inner.textContent = ".";
+  } else if (tile.value == 8){
+    inner.textContent = "0";
+  } else if (tile.value == 16){
+    inner.textContent = "2";
+  } else if (tile.value == 32){
+    inner.textContent = "2(2)";
+  } else if (tile.value == 64){
+    inner.textContent = "1";
+  } else if (tile.value == 128){
+    inner.textContent = "4";
+  } else if (tile.value == 256){
+    inner.textContent = "2";
+  }else if (tile.value == 512){
+    inner.textContent = "1";
+  }else if (tile.value == 1024){
+    inner.textContent = "3"; //29
+  }else if (tile.value == 2048){
+    inner.textContent = "E23";
+  }
+
 
   if (tile.previousPosition) {
     // Make sure that the tile gets rendered in the previous position first
     window.requestAnimationFrame(function () {
-      classes[2] = self.positionClass({ x: tile.x, y: tile.y });
+      classes[2] = self.positionClass({ x: tile.x, y: tile.y});
       self.applyClasses(wrapper, classes); // Update the position
     });
   } else if (tile.mergedFrom) {
